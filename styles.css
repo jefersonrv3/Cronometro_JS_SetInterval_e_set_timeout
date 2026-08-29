@@ -1,0 +1,287 @@
+  * {
+      box-sizing: border-box;
+  }
+
+  body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #434344;
+      color: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+
+  }
+
+  #mobile-background {
+      display: none;
+  }
+
+  #background {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+  }
+
+
+  .glass-card {
+
+      width: 650px;
+      height: 60%;
+      padding: 30px;
+      gap: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.39);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.36);
+
+  }
+
+  h1 {
+      font-size: 25px;
+      font-weight: 500;
+      opacity: 0.8;
+      color: black;
+      margin: 0;
+  }
+
+  h2 {
+      color: black;
+      font-size: 18px;
+      font-weight: 500;
+      opacity: 0.8;
+      margin: 0;
+
+  }
+
+
+  /* RELÓGIO ANALÓGCO */
+  .clock {
+      position: relative;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 45%, #2b2b31, #17171a);
+      border: 6px solid #3a3a41;
+  }
+
+  .center-dot {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 14px;
+      height: 14px;
+      background: #e63946;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+  }
+
+  .hand {
+      /* cada ponteiro é uma div fina ancorada no centro */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform-origin: 50% 100%;
+      /* gira pela base n pelo meio */
+      background: #fff;
+      border-radius: 4px;
+  }
+
+  .hand-hours {
+      width: 6px;
+      height: 65px;
+      margin-left: -3px;
+      margin-top: -65px;
+      background: #f2f2f2;
+  }
+
+  .hand-minutes {
+      width: 4px;
+      height: 90px;
+      margin-left: -2px;
+      margin-top: -90px;
+      background: #cfcfcf;
+  }
+
+  .hand-seconds {
+      width: 2px;
+      height: 100px;
+      margin-left: -1px;
+      margin-top: -100px;
+      background: #e63946;
+  }
+
+  /* marcacoes dos 12 nmros */
+  .tick {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 2px;
+      height: 10px;
+      background: #55555c;
+      transform-origin: 50% 0;
+  }
+
+  .tick.major {
+      height: 14px;
+      width: 3px;
+      background: #8a8a92;
+  }
+
+  /* contador Digital*/
+  .digital {
+      font-family: 'Consolas', monospace;
+      font-size: 42px;
+      letter-spacing: 2px;
+      background: #000;
+      padding: 12px 24px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      width: fit-content;
+  }
+
+  .controls button {
+      font-size: 15px;
+      padding: 8px 18px;
+      margin: 0 6px;
+      border-radius: 6px;
+      border: 1px solid #444;
+      background: #2a2a30;
+      color: #fff;
+      cursor: pointer;
+  }
+
+  .controls button:hover {
+      background: #3a3a42;
+  }
+
+  .controls button:active {
+      background: #e63946;
+      color: black;
+  }
+
+  .glass-card {
+      width: min(650px, 90vw);
+      height: auto;
+      margin: 0 auto;
+  }
+
+  /* respons tabelet */
+  @media (max-width: 768px) {
+      #mobile-background {
+          display: block;
+          position: absolute;
+          width: 100vw;
+          height: 100vh;
+          z-index: -1;
+      }
+
+      #background {
+          display: none;
+      }
+
+      .glass-card {
+          width: min(500px, 88vw);
+          padding: 24px;
+          gap: 16px;
+      }
+
+      .clock {
+          width: 220px;
+          height: 220px;
+      }
+
+      .hand-hours {
+          height: 55px;
+          margin-top: -55px;
+      }
+
+      .hand-minutes {
+          height: 76px;
+          margin-top: -76px;
+      }
+
+      .hand-seconds {
+          height: 85px;
+          margin-top: -85px;
+      }
+
+      .digital {
+          font-size: 34px;
+          padding: 10px 18px;
+      }
+
+      h1 {
+          font-size: 22px;
+      }
+
+      h2 {
+          font-size: 16px;
+      }
+  }
+
+  /* resp CEl- */
+  @media (max-width: 480px) {
+      body {
+          margin: 0 18px;
+          /* margin lateral "maiorzinha" */
+      }
+
+      .glass-card {
+          width: 88vw;
+          padding: 18px;
+          gap: 14px;
+          border-radius: 12px;
+      }
+
+      .clock {
+          width: 180px;
+          height: 180px;
+          border-width: 4px;
+      }
+
+      .hand-hours {
+          height: 45px;
+          margin-top: -45px;
+      }
+
+      .hand-minutes {
+          height: 62px;
+          margin-top: -62px;
+      }
+
+      .hand-seconds {
+          height: 70px;
+          margin-top: -70px;
+      }
+
+      .digital {
+          font-size: 26px;
+          letter-spacing: 1px;
+          padding: 8px 14px;
+      }
+
+      .controls button {
+          font-size: 13px;
+          padding: 7px 12px;
+          margin: 0 4px;
+      }
+
+      h1 {
+          font-size: 19px;
+      }
+
+      h2 {
+          font-size: 14px;
+      }
+  }
