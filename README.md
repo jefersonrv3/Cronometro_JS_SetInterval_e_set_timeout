@@ -6,5 +6,7 @@
 <p> Estilizei de acordo com gosto pessoal para uma aparência agradável e também para experimentar um pouco e praticar o CSS</p>
 
 <p> Como é possível visualizar nas imagens abaixo o projeto tem compatibilidade completa com diversos tipos de tela, algo que eu também quis praticar e testar. </p>
+
+<a href="https://jefersonrv3.github.io/Cronometro_JS_SetInterval_e_set_timeout"> Link da página de teste </a>
 <img src="./assets/imgreadme.png">
 <img src="./assets/promo img.png">
